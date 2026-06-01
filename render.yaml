@@ -29,11 +29,7 @@ services:
         destination: /index.html
     envVars:
       - key: VITE_API_URL
-        # Hook up backend URL dynamically
-        fromService:
-          name: flowstock-backend
-          type: web
-          property: url
+        value: https://flowstock-backend.onrender.com/api
 
 # ----------------- Managed PostgreSQL Database -----------------
 databases:
