@@ -14,9 +14,8 @@ services:
         value: production
 
   # ----------------- React SPA Frontend Static Web Service -----------------
-  - type: web
+  - type: static
     name: flowstock-frontend
-    env: static
     buildCommand: cd frontend && npm install && npm run build
     publishPath: frontend/dist
     headers:
