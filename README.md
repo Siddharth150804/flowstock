@@ -96,8 +96,8 @@ To run the entire containerized application stack (PostgreSQL, FastAPI, and Reac
 
 3. **Access the Services**:
    - **Frontend Application**: [https://frontend-wine-iota-37.vercel.app](https://frontend-wine-iota-37.vercel.app)
-   - **Backend API Server**: [http://localhost:8000](http://localhost:8000)
-   - **Interactive OpenAPI (Swagger) Documentation**: [http://localhost:8000/docs](http://localhost:8000/docs)
+   - **Backend API Server**: [https://flowstock-backend-rzuj.onrender.com](https://flowstock-backend-rzuj.onrender.com)
+   - **Interactive OpenAPI (Swagger) Documentation**: [https://flowstock-backend-rzuj.onrender.com/docs](https://flowstock-backend-rzuj.onrender.com/docs)
 
 4. **Shutdown Containers**:
    ```bash
