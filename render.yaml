@@ -13,9 +13,9 @@ services:
       - key: ENVIRONMENT
         value: production
 
+staticSites:
   # ----------------- React SPA Frontend Static Web Service -----------------
-  - type: static
-    name: flowstock-frontend
+  - name: flowstock-frontend
     buildCommand: cd frontend && npm install && npm run build
     publishPath: frontend/dist
     headers:
@@ -33,8 +33,6 @@ services:
           name: flowstock-backend
           type: web
           property: url
-        # Note: Render provides VITE_API_URL as the service URL, we append /api in code if needed,
-        # but in FlowStock API setup, since we have routing prefixes, we can handle it seamlessly.
 
 # ----------------- Managed PostgreSQL Database -----------------
 databases:
