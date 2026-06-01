@@ -13,11 +13,12 @@ services:
       - key: ENVIRONMENT
         value: production
 
-static_sites:
   # ----------------- React SPA Frontend Static Web Service -----------------
-  - name: flowstock-frontend
+  - type: web
+    name: flowstock-frontend
+    env: static
     buildCommand: cd frontend && npm install && npm run build
-    publishPath: frontend/dist
+    staticPublishPath: frontend/dist
     headers:
       - path: /*
         name: Cache-Control
