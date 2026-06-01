@@ -13,7 +13,7 @@ services:
       - key: ENVIRONMENT
         value: production
 
-staticSites:
+static_sites:
   # ----------------- React SPA Frontend Static Web Service -----------------
   - name: flowstock-frontend
     buildCommand: cd frontend && npm install && npm run build
