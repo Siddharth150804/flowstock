@@ -1,0 +1,31 @@
+# Python ignore rules
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv
+venv/
+ENV/
+.pytest_cache/
+test_inventory.db
+inventory.db
+*.db
+*.sqlite
+
+# Node ignore rules
+node_modules/
+dist/
+build/
+.npm
+npm-debug.log*
+
+# Secrets & Environment configs
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Operating System files
+.DS_Store
+Thumbs.db

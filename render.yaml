@@ -1,0 +1,44 @@
+services:
+  # ----------------- FastAPI Backend Web Service -----------------
+  - type: web
+    name: flowstock-backend
+    env: python
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: flowstock-db
+          property: connectionString
+      - key: ENVIRONMENT
+        value: production
+
+  # ----------------- React SPA Frontend Static Web Service -----------------
+  - type: web
+    name: flowstock-frontend
+    env: static
+    buildCommand: cd frontend && npm install && npm run build
+    publishPath: frontend/dist
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: public, max-age=0, must-revalidate
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: VITE_API_URL
+        # Hook up backend URL dynamically
+        fromService:
+          name: flowstock-backend
+          type: web
+          property: url
+        # Note: Render provides VITE_API_URL as the service URL, we append /api in code if needed,
+        # but in FlowStock API setup, since we have routing prefixes, we can handle it seamlessly.
+
+# ----------------- Managed PostgreSQL Database -----------------
+databases:
+  - name: flowstock-db
+    plan: free
+    postgresMajorVersion: "15"

@@ -1,0 +1,12 @@
+node_modules/
+dist/
+build/
+.git/
+.github/
+.gitignore
+.env
+.env.local
+.env.development
+.env.production
+.env.staging
+README.md
