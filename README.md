@@ -95,7 +95,7 @@ To run the entire containerized application stack (PostgreSQL, FastAPI, and Reac
    - Build, compile, and expose the React SPA through Nginx on the local system.
 
 3. **Access the Services**:
-   - **Frontend Application**: [http://localhost](http://localhost)
+   - **Frontend Application**: [https://frontend-wine-iota-37.vercel.app](https://frontend-wine-iota-37.vercel.app)
    - **Backend API Server**: [http://localhost:8000](http://localhost:8000)
    - **Interactive OpenAPI (Swagger) Documentation**: [http://localhost:8000/docs](http://localhost:8000/docs)
 
